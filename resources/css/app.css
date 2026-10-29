@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+
+@source '../views/**/*.blade.php';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Playfair Display', ui-serif, Georgia, serif;
+
+    --color-summer-haze: #F2EBD9;
+    --color-summer-card: #FAF6EC;
+    --color-summer-muted: #E6DEC8;
+    --color-leafy: #343D35;
+    --color-accent-gold: #C5A880;
+}
+
+/* Custom animations */
+@keyframes float-up {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes badge-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 168, 128, 0.4); }
+    50% { transform: scale(1.03); box-shadow: 0 0 0 8px rgba(197, 168, 128, 0); }
+}
+
+.animate-float { animation: float-up 4s ease-in-out infinite; }
+.animate-float-slow { animation: float-up 6s ease-in-out infinite; }
+.animate-float-delayed { animation: float-up 4s ease-in-out 1.5s infinite; }
+.animate-fade-in-up { animation: fade-in-up 0.7s ease-out forwards; }
+.animate-badge-pulse { animation: badge-pulse 2.5s ease-in-out infinite; }
+
+/* Scroll behavior */
+html { scroll-behavior: smooth; }
